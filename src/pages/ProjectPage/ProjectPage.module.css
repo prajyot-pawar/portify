@@ -1,0 +1,45 @@
+@font-face {
+     font-family: 'Monument Extended';
+     src: url('../fonts/MonumentExtended-Regular.otf') format('truetype');
+     /* Add additional font formats and paths for different file types */
+   }
+   
+   @font-face {
+     font-family: 'Monument Extended UB';
+     src: url('../fonts/MonumentExtended-Ultrabold.otf') format('truetype');
+     /* Add additional font formats and paths for different file types */
+   }
+   
+   
+   @font-face {
+     font-family: 'Alex Brush';
+     src: url('../fonts/AlexBrush-Regular.ttf') format('truetype');
+     /* Add additional font formats and paths for different file types */
+   }
+   
+   
+   @font-face {
+     font-family: 'Dualis';
+     src: url('../fonts/Dualis-Lite.ttf') format('truetype');
+     /* Add additional font formats and paths for different file types */
+   }
+
+   @font-face {
+     font-family: 'Open Sans';
+     src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap') format('truetype');
+     /* Add additional font formats and paths for different file types */
+   }
+
+   .projectContent{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 5vh;
+    /* user-select: none; */
+    margin-left: 15vw;
+    padding-right: 15vw;
+    text-align: start;
+    margin-right: auto;
+    font-family: 'Open Sans';
+
+   }

@@ -1,0 +1,203 @@
+
+.title_upper {
+  font-size: 20px;
+  font-weight: bold;
+  color: #484848;
+  /* margin-bottom: 100px; */
+  font-family: 'Monument Extended';
+  margin-top: auto; 
+}:hover { 
+  color: #222222;
+}
+
+#center > * {  
+  top: 50%;
+  left: 50%;
+}
+
+.title {
+  font-size:45px;
+  font-weight: bold;
+  color: #484848;
+  /* margin-bottom: 100px; */
+  font-family: 'Monument Extended';
+}:hover { 
+  color: #222222;
+}
+
+.heroContainer::-webkit-scrollbar {
+     display: none;
+   }
+   
+   html {
+     scroll-behavior: smooth;
+   }
+.heroContainer {
+  height: 60vh;
+  width: 100vw;
+  overflow-y: scroll;  
+  scroll-snap-type: y mandatory;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  scrollbar-color: transparent transparent
+}
+.background {
+  background-image: url("../images/spaceblack.jpg");
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+.divRef{
+  height: 60vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: aqua; */
+  /* align-items: center; */
+  justify-content: center;
+  /* text-align: center */
+  top: 50%;
+  left: 50%;
+}
+
+.FalseContainer{
+  width: 100vw;
+  /* background-color: aqua; */
+  height: 21vh;
+}
+
+.heroContainer section {  
+  scroll-snap-align: start;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* top: 50%;
+  left: 50%; */
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  min-height: 100%;
+  /* padding: 20px; */
+}
+
+.semicircledown {
+  background: rgb(0, 0, 0);
+  border-radius:  100vh 100vh 0px 0px  ;
+  width: 40vh;
+  height: 20vh;
+  margin-top: auto; 
+}
+
+.semicircleup {
+  background-image:radial-gradient(circle at 65% 15%, rgb(235, 235, 235) 1px, #fecb04 3%, #fa5843  60%,#d61b60 100%); 
+  border-radius:  0px 0px  100vh 100vh ;
+  width: 40vh;
+  height: 20vh;
+  margin-bottom: auto; 
+}
+
+
+.subtitle {
+  font-size: 20px;
+  /* margin-bottom: 100px; */
+  color: #787878;  
+  font-family: 'Monument Extended';
+}:hover { 
+  color: #222222;
+}
+
+
+.subtitle_lower{
+  font-size: 60px;
+  /* margin-bottom: 100px; */  
+  background: -webkit-linear-gradient(#000000 , #747474  ,#ffffff );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-reflect: below 1px linear-gradient(to bottom, rgba(255, 0, 0, 0), rgba(255, 255, 255, 0.4)); 
+  margin-bottom: auto; 
+  left: 150px;
+  top: 350px;
+  font-family: 'Alex Brush';  
+}
+
+
+
+.description {
+     font-size: 20px;
+     color: #787878;  
+     font-family: 'Monument Extended';
+   }
+
+
+   @media (max-width: 768px) {
+    .title_upper {
+      font-size: 15px;
+      font-weight: bold;
+      color: #484848;
+      /* margin-top: 100px; */
+      /* margin-bottom: 100px; */
+      font-family: 'Monument Extended';
+    }
+     .title {
+       font-size: 23px;
+     }
+     
+   .subtitle {
+     font-size: 15px;
+     color: #787878;
+   }
+   
+   .subtitle_lower{
+     font-size: 25px;
+     color: #787878;  
+     font-weight: 600;  
+     font-family: 'Alex Brush';   
+   }
+   
+   .description {
+    font-size: 10px;
+    /* margin-bottom: 100px; */
+    color: #787878;  
+    font-family: 'Monument Extended';
+  }
+
+   .blog_section {
+     font-size: 25px;
+     border-radius: 5%;
+     color: #FFFFFF;
+     /* margin-bottom: 0px; */
+     font-family: 'Monument Extended';
+   }
+   
+   .projects_section {
+     font-size: 25px;
+     color: #FFFFFF;;
+     margin-bottom: 0px;
+     font-family: 'Monument Extended';
+   }
+   
+   .logo_div svg {
+     width: 100%; /* or any custom size */
+     height: 100%; 
+     object-fit: fill;  
+     width: 6vh;
+     height: 6vh;
+     transition: width 0.4s, height 0.4s;
+   }
+   
+   .sun_div {
+     height: 5vh;
+     width: 5vh;
+     display: flex;
+     padding-left: 1px;
+     justify-content: center;
+     align-items: center;
+     transition: width 0.4s, height 0.4s;
+   }
+
+   }
