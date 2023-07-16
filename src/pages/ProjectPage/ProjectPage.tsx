@@ -1,6 +1,6 @@
 import { useState, useEffect, CSSProperties, useRef } from 'react';
 import styles from '../../assets/css/HomePage.module.css'
-import stylesectionproject from '../ProjectSectionPage.module.css';
+import stylesectionproject from './ProjectPage.module.css';
 import styleproject from '../ProjectPage/ProjectPage.module.css';
 import sunImage from '../../assets/images/sun 1.png';
 import moonImage from '../../assets/svg/moon.svg';
