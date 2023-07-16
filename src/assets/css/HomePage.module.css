@@ -24,6 +24,28 @@
   /* Add additional font formats and paths for different file types */
 }
 
+@font-face {
+  font-family: 'Source Code';
+  src: url('../fonts/SourceCode.ttf') format('truetype');
+  /* Add additional font formats and paths for different file types */
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat.ttf') format('truetype');
+  /* Add additional font formats and paths for different file types */
+}
+@font-face {
+  font-family: 'GreatVibesRegular';
+  src: url('../fonts/GreatVibesRegular.ttf') format('truetype');
+  /* Add additional font formats and paths for different file types */
+}
+@font-face {
+  font-family: 'CookiesandCheeze';
+  src: url('../fonts/CookiesandCheeze.ttf') format('truetype');
+  /* Add additional font formats and paths for different file types */
+}
+
 *, *:before, *:after {
   margin: 0;
   padding: 0;
@@ -41,11 +63,11 @@ align-items: center;
 }
 
 .right_nav{
-  width: 30vw;
+  width: 20vw;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-items: end;
+  justify-items: center;
   justify-content: space-evenly;
 }
 
@@ -91,6 +113,7 @@ align-items: center;
 .htmlLight{  
   cursor: none; 
 	overflow:hidden;
+  z-index: 100;
 }
 
 .htmlLight::before {
@@ -108,8 +131,6 @@ align-items: center;
   background-color: rgb(255, 255, 255)
   
   /* circle 20vmax at var(--cursorX) var(--cursorY), */
-  ;
-  border: 0px solid black;
 }
 
 .htmlColorLight{  
@@ -128,7 +149,7 @@ align-items: center;
   left: calc(var(--cursorX) - 40px); 
   mix-blend-mode: difference; /* Blend mode to invert color */
   pointer-events: none;
-  background-color: rgb(255, 255, 255)
+  background-color: rgb(255, 255, 255);
   
   /* circle 20vmax at var(--cursorX) var(--cursorY), */
   ;
@@ -211,7 +232,8 @@ align-items: center;
   
   /* animation-name: bounce;
   animation-timing-function: ease; */
-}:hover {
+}
+.blogSection:hover {
   animation-name: slideup;
   border-radius:  0 20px 20px 0px;
   animation-timing-function: ease-in-out;
@@ -261,7 +283,7 @@ align-items: center;
   /* animation-name: bounce;
   animation-timing-function: ease; */
 }
-:hover {
+.projectsSection:hover {
   animation-name: slideup;
   border-radius:  0 20px 20px 0px;
   animation-timing-function: ease-in-out;
@@ -292,10 +314,12 @@ align-items: center;
 } 
 
 .socials_text{    
-  color: #484848;
-  transition: 0s ,color .5s,background-color .5s;
-}:hover { 
-  color: black;
+  color: #ffffff;
+  background-color: #484848;
+  padding: 20px;
+  border-radius: 100%;
+  transition: 0s ,color .5s,background-color .5s;  
+  font-size: 20;
 }
 
 .logo_div{
@@ -331,7 +355,6 @@ align-items: center;
   align-items: center;
   transition: width 0.3s, height 0.3s;
 }
-
 .sun_div img {
   object-fit: fill;
   width: 4vh;
@@ -366,6 +389,217 @@ align-items: center;
   height: 5vh;
 }
 
+.aboutsection{
+height: 90vh;
+width: 100vw;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.aboutcard{
+  height: 30vh;
+  min-width: 500px;
+  max-width: 1000px;
+  /* background-color: #f75f5f; */
+  display: flex;
+  border-radius:  30px 30px 30px 30px ;
+  color: rgb(255, 255, 255);
+  font-family: 'Monument Extended';  
+  transition: 
+  background-color 1s ease-in-out, 
+  color 1s ease-in-out, 
+  border-radius 1s ease-in-out;
+  transform-style: preserve-3d;
+  
+}
+/* .aboutcard:hover {  
+  transform: scale(1.1);
+  animation: scaleup 1.5s forwards ease-in;
+  background-color: #1e9aff;
+  border-radius: 20px 20px  20px 20px;
+  animation-timing-function: ease-in-out;
+  color: rgb(255, 255, 255);
+  transform: rotateY(180deg);
+} */
+
+.flipcontainer{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* background-color: #324597; */
+  transition: transform 0.8s;
+  perspective: 1000px;
+}
+
+.flipcontainerwithouthover{  
+  position: relative;
+  width: 101%;
+  height: 101%;
+  background-color: #404040;
+  transition: transform 1.8s;
+  border-radius: 10px 10px 10px 10px;
+  transform-style: preserve-3d;
+}
+.redStrip{
+  background-color: red;
+  position: absolute;
+  width: 10%;
+  height: 100%;
+  z-index: -1;
+  left: 80%;
+}
+
+.flipcontainerinner {
+  position: relative;
+  width: 101%;
+  height: 101%;
+  background-color: #404040;
+  transition: transform 1.8s;
+  border-radius: 10px 10px 10px 10px;
+  transform-style: preserve-3d;
+}
+.flipcontainerinner:hover{
+  color: white;
+  transform: rotateX(180deg);
+}
+
+.flipcontainer:hover .flipcontainerinner {
+  color: white;
+}
+
+.flipcontainerfront, .flipcontainerback {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: space-between;
+  justify-content: space-between;
+  backface-visibility: hidden;  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.flipcontainerfrontrow{
+  width: 100%;
+  display: flex;
+  margin-top: 10%;
+  flex-direction: row;
+  text-shadow: 2px 2px #525252;
+  align-items: center;
+  align-items: space-around;
+  justify-content: space-evenly;
+  backface-visibility: hidden;
+}
+
+.flipcontainerfrontrow>img{
+  width: 10vh;
+  height: 10vh;
+  border-radius: 100%;
+}
+
+.flipcontainerfrontrowcolumn{
+display: flex;
+flex-direction: column;
+}
+
+.flipcontainerfrontrowcolumn>span{
+  margin-top: 5%;
+  font-family: 'alex brush';
+  opacity: 0.8;
+  font-size: 30px;
+}
+.flipcontainerfrontrowcolumn>div{
+  margin-top: 5%;
+  font-family: 'Monument Extended';
+  opacity: 0.8;
+  font-size: 15px;
+}
+.flipcontainerfrontrowcolumnconnect{  
+  opacity: 1;
+}
+
+.flipcontainerfrontcolumnrow{
+display: flex;
+flex-direction: row;
+align-items: center;
+width: 50%;
+justify-content: space-between;
+margin-bottom: 30px;
+}
+
+.flipcontainerfrontcolumnrow>a{
+color: #ffffff;
+}
+
+.flipcontainersign{
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  left: 85%;
+  top: 70%;
+  background-color: transparent;
+  font-family: 'Alex Brush';
+  font-size: 20px;
+  font-weight: 200;
+  transform:rotate(-30deg);
+}
+
+.flipcontainerback {
+  background-color: #404040;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg)scaleY(-1)scaleX(-1);
+  /* -webkit-transform: scale(1, 1); */
+  border-radius: 10px 10px 10px 10px;
+}
+.flipcontainerback>p{
+  width: 100%;
+  font-size: 40px;
+  text-align: left;
+  margin-top: 20px;
+  margin-left: 15%;
+}
+.flipcontainerback>pre{  
+  width: 100%;
+  font-size: 15px;
+  text-align: left;
+  margin-top: 20px;
+  margin-left: 25%;
+  font-family: 'monument Extended';
+}
+.feedbackribbon>input{
+  width: 50%;
+  height: 15%;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: auto;
+  margin-bottom: 30px;
+  border-radius: 20px 20px 20px 20px ;
+  border-color: transparent;
+  font-size: 50px;
+  padding: 20px;
+  background-color: #ffffff;
+  text-align: left;
+  font-size: 15px;
+  font-family: 'monument Extended';
+}:hover{
+  color: #324597;
+}
+.flipcontainerback>:placeholder-shown{  
+  font-size: 15px;
+  font-family: 'monument Extended';
+}
+.SubmitButton{
+  
+}
+/* .aboutcard:not(:hover){  
+  animation: scaleup 1.5s reverse ease-in;
+} */
 /* 
 .hovercontainer{
   width: 50px;
@@ -402,7 +636,6 @@ align-items: center;
     margin: auto;
   transition: all .3s ease;
   & > p {
-    color: #353535;
     font-size: 20px;
   }
 }
@@ -421,11 +654,37 @@ align-items: center;
   0%  { transform: translateY(50px); }
 }
 
+@keyframes scaleup {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1.20);
+  }
+}
+
 @media (max-width: 768px) {
+
   .title {
     font-size: 30px;
   }
   
+.socials_text{  
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.zoomed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  z-index: 9999;
+  transform: scale(1.5);
+  animation: zoom-in 0.3s ease;
+}
+
 .subtitle {
   font-size: 15px;
   color: #787878;
@@ -438,10 +697,19 @@ align-items: center;
   font-family: 'Alex Brush';   
 }
 
+
+
 .blog_section {
   font-size: 25px;
-  border-radius: 5%;
+  border-radius: 0%;
   color: #FFFFFF;
+  margin-bottom: 0px;
+  font-family: 'Monument Extended';
+}
+
+.blog_section_color {
+  font-size: 25px;
+  color: #324597;
   margin-bottom: 0px;
   font-family: 'Monument Extended';
 }
@@ -452,6 +720,13 @@ align-items: center;
   margin-bottom: 0px;
   font-family: 'Monument Extended';
 }
+
+.projects_section_color {
+  font-size: 25px;
+  color: #eec962;
+  margin-bottom: 0px;
+  font-family: 'Monument Extended';
+} 
 
 .logo_div svg {
   width: 100%; /* or any custom size */
@@ -487,6 +762,65 @@ align-items: center;
   animation-iteration-count: 1;
   transform-origin: bottom;
   animation-fill-mode: forwards;
+}
+
+.right_nav{
+  width: 40vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-evenly;
+}
+
+.aboutcard{
+  height: 30vh;
+  min-width: 50vh;
+  /* background-color: #f75f5f; */
+  display: flex;
+  padding: 10px;
+  border-radius:  30px 30px 30px 30px ;
+  color: rgb(255, 255, 255);
+  font-family: 'Monument Extended';  
+  transition: 
+  background-color 1s ease-in-out, 
+  color 1s ease-in-out, 
+  border-radius 1s ease-in-out;
+  transform-style: preserve-3d;
+  
+}
+
+.flipcontainerfrontcolumnrow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  }
+
+
+  .feedbackribbon>input{
+    width: 50%;
+    height: 15%;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: auto;
+    margin-bottom: 30px;
+    border-radius: 20px 20px 20px 20px ;
+    font-size: 13px;
+    background-color: #ffffff;
+    text-align: left;
+    font: 100;
+    padding: 10px;
+    font-family: 'Monument Extended';
+  }:active{
+    color: #324597;
+  }
+  
+.flipcontainerback>:placeholder-shown{  
+  font-size: 5px;
+  font-family: 'monument Extended';
 }
 
 }

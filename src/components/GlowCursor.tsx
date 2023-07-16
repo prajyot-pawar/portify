@@ -1,5 +1,4 @@
-import { useEffect, useRef ,MutableRefObject  } from 'react';
-import styles from '../assets/css/glowcursor.module.css';
+import { useEffect} from 'react';
 
 
 const LightTracker = () => {

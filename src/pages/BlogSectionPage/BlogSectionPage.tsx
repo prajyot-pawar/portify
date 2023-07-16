@@ -1,6 +1,6 @@
 import { useState, useEffect, CSSProperties, useRef } from 'react';
 import styles from '../../assets/css/HomePage.module.css'
-import stylesblog from './blogSectionPage.module.css';
+import stylesblogsection from './blogSectionPage.module.css';
 import sunImage from '../../assets/images/sun 1.png';
 import moonImage from '../../assets/svg/moon.svg';
 import colorImage from '../../assets/images/go_color.png';
@@ -115,20 +115,23 @@ else
   const blogdivStyle :CSSProperties = {    
     backgroundColor:(theme=== 'colour' && 'light' ) ? '#feffd6' : 'white',
     margin: isMobile?'20px':'30px',
-    height: '15vh',
     width: isMobile?'70vw':'50vw',
     padding: '2vh',
-    fontSize: isMobile ? '38px' : '60px',
+    fontSize: isMobile ? '20px' : '60px',
   };
 
 
 
   
   const  pageHeader:CSSProperties = {
+    
     width:'25vw',
     height:'15vh',
-    fontSize:isMobile ? '25px':'30px',
+    fontSize:isMobile ? '15px':'30px',
     display:'flex',
+    alignContent:'center',
+    justifyContent:'center',
+    textAlign:'center',
     flexDirection:'row',
     // backgroundColor:'red',
     //borderRadius: ,    
@@ -183,10 +186,16 @@ else
               
       <Link to="/" state={{ theme: theme }}>
       <div className={styles.logo_div}>
+      {(theme=='colour')?     
+       <svg width="236" height="332" viewBox="0 0 236 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 95C8 46.399 47.3989 7 96 7H112V236C112 284.601 72.6011 324 24 324H8V95Z" fill="#26D973"/>
+        <path d="M228 95C228 46.3989 188.601 7 140 7H124V135C124 146.046 132.954 155 144 155H228V95Z" fill="#268CD9"/>
+        </svg>:
         <svg xmlns="http://www.w3.org/2000/svg" width="236" height="332" viewBox="0 0 236 332" fill="none">
-  <path d="M8 95C8 46.399 47.3989 7 96 7H112V236C112 284.601 72.6011 324 24 324H8V95Z" fill="#484848"/>
-  <path d="M228 95C228 46.3989 188.601 7 140 7H124V135C124 146.046 132.954 155 144 155H228V95Z" fill="#ACAEAB"/>
-</svg> 
+          <path d="M8 95C8 46.399 47.3989 7 96 7H112V236C112 284.601 72.6011 324 24 324H8V95Z" fill="#484848"/>
+          <path d="M228 95C228 46.3989 188.601 7 140 7H124V135C124 146.046 132.954 155 144 155H228V95Z" fill="#ACAEAB"/>
+          </svg>
+          }
 </div>
 </Link>
 <div className={styles.sun_div} onClick={toggleTheme} >
@@ -205,20 +214,20 @@ else
 
 </div>
       </div>
-       <div className={stylesblog.header} style={pageHeader}>
+       <div className={stylesblogsection.header} style={pageHeader}>
         { !isMobile &&
-<img src={theme=='dark'?PenImage:PenImage} className={stylesblog.pen} alt="Sun" />}
+<img src={theme=='dark'?PenImage:PenImage} className={stylesblogsection.pen} alt="Sun" />}
   <h1>blogs</h1>
 </div>   
-<div className={stylesblog.line}></div>
-       <div style= {pageContent} className={stylesblog.content}>
-      {blogItems.map((blogItem, index) => (
-      <Link to="/blogs/blog" state={{ theme: theme , item: blogItem}} className={stylesblog.link}>
-        <div key={index} className={stylesblog.blogdiv} style= {blogdivStyle}>
-           <div className={styles.blog_div_header}>
+<div className={stylesblogsection.line}></div>
+       <div style= {pageContent} className={stylesblogsection.content}>
+      {blogItems.slice(0, blogItems.length - 1).map((blogItem, index) => (
+      <Link to="/blogs/blog" state={{ theme: theme , item: blogItem}} className={stylesblogsection.link}>
+        <div key={index} className={stylesblogsection.blogdiv} style= {blogdivStyle}>
+           <div className={stylesblogsection.blog_div_header}>
             <h3>{blogItem.title}</h3>  
             </div>
-          <div className={stylesblog.blog_div_lower} style={blogdivlowerStyle}>
+          <div className={stylesblogsection.blog_div_lower} style={blogdivlowerStyle}>
             <div className={styles.blog_div_date}>{blogItem.date} </div>
             <p>{blogItem.minutes}</p>
           </div>

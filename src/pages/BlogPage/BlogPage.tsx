@@ -24,20 +24,18 @@ interface BlogItem {
      imageUrl: string ;  
    }
 
-   interface GoogelDriveTextFile {
-    content: string;
-  }
 
 const BlogPage: React.FC  =  () => {
 
   const location = useLocation();  
   const { newtheme, item } = (location.state || {}) as LocationState;
   const prevpagetheme = location.state && location.state.theme;
-  console.log("This is "+ prevpagetheme)
 
   const [isMobile, setIsMobile] = useState(false);   
+  const [reloaded, setreloaded] = useState(0);   
+  const [SocialText, setSocialText] = useState('@');   
   const [blogItem, setBlogItem] = useState<BlogItem>();
-  const [finalOutput, setfinalOutput] = useState<string | undefined>('');
+  const [finalOutput, setfinalOutput] = useState<string | undefined>('Loading');
   // const [markdownText, setMarkdownText] = useState<string | undefined>('');
   // const [GoogelDriveTextFile, setGoogleDriveTextFile] = useState<GoogelDriveTextFile | null>(null);
 
@@ -54,32 +52,41 @@ const BlogPage: React.FC  =  () => {
       const response = await fetch(fileUrl);
       const fileContent = await response.text();
       setfinalOutput(fileContent);
-      console.log("This is what we got:", fileContent);
+      console.log("This is what we got:", newtheme);
     } catch (error) {
       console.error('Error:', error);
     }
   };
 
-  useEffect(()=>{
-    console.log("This is "+item)
-    console.log(theme);
-    console.log(item.title);
-    console.log(item.date);
-    console.log(item.minutes);
-    console.log(item.content);
-    console.log(item.imageUrl);
-    setBlogItem({
-     // title : item.title,r
-     title: item.title,
-     date: item.date,
-     minutes: item.minutes,
-     content: item.content ,
-     imageUrl: item.imageUrl, 
-    });
-    fetchTextFile(blogItem?.content?? '');
-    // setMarkdownText(); 
-  })
+  
+  function  CallMe(){
+      console.log("This is "+item)
+      console.log(theme);
+      console.log(item.title);
+      console.log(item.date);
+      console.log(item.minutes);
+      console.log(item.content);
+      console.log(item.imageUrl);
+      setBlogItem({
+       // title : item.title,r
+       title: item.title,
+       date: item.date,
+       minutes: item.minutes,
+       content: item.content ,
+       imageUrl: item.imageUrl, 
+      });
+      fetchTextFile(blogItem?.content?? '');
+      // setMarkdownText(); 
+    }
+    
+    useEffect(()=>{
+      for (let i = 0; i < 3; i++) {
+        (reloaded<5?CallMe():'None')
+      setreloaded(reloaded+1);
+      }
+    },[finalOutput])
 
+    
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
@@ -88,6 +95,7 @@ const BlogPage: React.FC  =  () => {
 
     window.addEventListener('resize', handleResize);
     handleResize(); // Check initial screen size
+    
       
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -138,26 +146,18 @@ else
     justifyContent:'space-between',
     //border: isMobile ? '1px solid black' : '1px solid red',
   };
-
-  
-  const blogdivStyle :CSSProperties = {    
-    backgroundColor:(theme=== 'colour' && 'light' ) ? '#feffd6' : 'white',
-    margin: isMobile?'20px':'30px',
-    height: '15vh',
-    width: isMobile?'70vw':'50vw',
-    padding: '2vh',
-    fontSize: isMobile ? '38px' : '60px',
-  };
-
-
-
   
   const  pageHeader:CSSProperties = {
-    width:'30vw',
+    width:'70vw',
     height:'15vh',
-    fontSize:isMobile ? '25px':'30px',
+    fontSize:isMobile ? '15px':'30px',
     display:'flex',
     flexDirection:'row',
+    overflow:'hidden',
+    wordWrap:'break-word',
+    justifyContent:'center',
+    // textOverflow:'ellipsis',
+    // whiteSpace:'nowrap',
     // backgroundColor:'red',
     //borderRadius: ,    
     // backgroundColor:(theme=== 'colour' && 'light' ) ? '#e7b11d' : '#505050', 
@@ -165,9 +165,6 @@ else
     //border: isMobile ? '1px solid black' : '1px solid red',
   };
   
-  const blogdivlowerStyle :CSSProperties={
-    fontSize:isMobile ? '10px':'20px',
-  }
   
   const  pageContent:CSSProperties = {
     width:'100vw',
@@ -233,11 +230,12 @@ else
 <div className={styles.colorwheel} onClick={toggleColourTheme}>
 <img src={colorImage} alt="Color" />
 </div>
+{ !isMobile &&
+<div onMouseEnter={() => setSocialText('Socials')}
+        onMouseLeave={() =>setSocialText('@')}><h3 className={styles.socials_text}>{SocialText}</h3></div>}
+
 { isMobile &&
 <div><h3 className={styles.socials_text}>@</h3></div>}
-
-{ !isMobile &&
-<div><h3 className={styles.socials_text}>Socials</h3></div>}
 
 </div>
       </div>

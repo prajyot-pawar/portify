@@ -1,7 +1,7 @@
 import { useState, useEffect, CSSProperties, useRef } from 'react';
 import styles from '../../assets/css/HomePage.module.css'
 import stylesectionproject from '../projectSectionPage/projectSectionPage.module.css';
-import styleproject from '../ProjectPage/ProjectPage.module.css';
+import styleproject from '../projectPage/projectPage.module.css';
 import sunImage from '../../assets/images/sun 1.png';
 import moonImage from '../../assets/svg/moon.svg';
 import colorImage from '../../assets/images/go_color.png';
@@ -24,20 +24,18 @@ interface projectItem {
      imageUrl: string ;  
    }
 
-   interface GoogelDriveTextFile {
-    content: string;
-  }
 
-const ProjectPage: React.FC  =  () => {
+const projectPage: React.FC  =  () => {
 
   const location = useLocation();  
   const { newtheme, item } = (location.state || {}) as LocationState;
   const prevpagetheme = location.state && location.state.theme;
-  console.log("This is "+ prevpagetheme)
 
   const [isMobile, setIsMobile] = useState(false);   
+  const [reloaded, setreloaded] = useState(0);   
+  const [SocialText, setSocialText] = useState('@');   
   const [projectItem, setprojectItem] = useState<projectItem>();
-  const [finalOutput, setfinalOutput] = useState<string | undefined>('');
+  const [finalOutput, setfinalOutput] = useState<string | undefined>('Loading');
   // const [markdownText, setMarkdownText] = useState<string | undefined>('');
   // const [GoogelDriveTextFile, setGoogleDriveTextFile] = useState<GoogelDriveTextFile | null>(null);
 
@@ -54,32 +52,41 @@ const ProjectPage: React.FC  =  () => {
       const response = await fetch(fileUrl);
       const fileContent = await response.text();
       setfinalOutput(fileContent);
-      console.log("This is what we got:", fileContent);
+      console.log("This is what we got:", newtheme);
     } catch (error) {
       console.error('Error:', error);
     }
   };
 
-  useEffect(()=>{
-    console.log("This is "+item)
-    console.log(theme);
-    console.log(item.title);
-    console.log(item.date);
-    console.log(item.minutes);
-    console.log(item.content);
-    console.log(item.imageUrl);
-    setprojectItem({
-     // title : item.title,r
-     title: item.title,
-     date: item.date,
-     minutes: item.minutes,
-     content: item.content ,
-     imageUrl: item.imageUrl, 
-    });
-    fetchTextFile(projectItem?.content?? '');
-    // setMarkdownText(); 
-  })
+  
+  function  CallMe(){
+      console.log("This is "+item)
+      console.log(theme);
+      console.log(item.title);
+      console.log(item.date);
+      console.log(item.minutes);
+      console.log(item.content);
+      console.log(item.imageUrl);
+      setprojectItem({
+       // title : item.title,r
+       title: item.title,
+       date: item.date,
+       minutes: item.minutes,
+       content: item.content ,
+       imageUrl: item.imageUrl, 
+      });
+      fetchTextFile(projectItem?.content?? '');
+      // setMarkdownText(); 
+    }
+    
+    useEffect(()=>{
+      for (let i = 0; i < 3; i++) {
+        (reloaded<5?CallMe():'None')
+      setreloaded(reloaded+1);
+      }
+    },[finalOutput])
 
+    
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
@@ -88,6 +95,7 @@ const ProjectPage: React.FC  =  () => {
 
     window.addEventListener('resize', handleResize);
     handleResize(); // Check initial screen size
+    
       
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -140,24 +148,20 @@ else
   };
 
   
-  const projectdivStyle :CSSProperties = {    
-    backgroundColor:(theme=== 'colour' && 'light' ) ? '#feffd6' : 'white',
-    margin: isMobile?'20px':'30px',
-    height: '15vh',
-    width: isMobile?'70vw':'50vw',
-    padding: '2vh',
-    fontSize: isMobile ? '38px' : '60px',
-  };
-
 
 
   
   const  pageHeader:CSSProperties = {
-    width:'30vw',
+    width:'70vw',
     height:'15vh',
-    fontSize:isMobile ? '25px':'30px',
+    fontSize:isMobile ? '15px':'20px',
     display:'flex',
     flexDirection:'row',
+    overflow:'hidden',
+    wordWrap:'break-word',
+    justifyContent:'center',
+    // textOverflow:'ellipsis',
+    // whiteSpace:'nowrap',
     // backgroundColor:'red',
     //borderRadius: ,    
     // backgroundColor:(theme=== 'colour' && 'light' ) ? '#e7b11d' : '#505050', 
@@ -165,9 +169,6 @@ else
     //border: isMobile ? '1px solid black' : '1px solid red',
   };
   
-  const projectdivlowerStyle :CSSProperties={
-    fontSize:isMobile ? '10px':'20px',
-  }
   
   const  pageContent:CSSProperties = {
     width:'100vw',
@@ -175,6 +176,7 @@ else
     // backgroundColor:'red',
     //borderRadius: isMobile ? '4px' : '8px',
     display:'flex',
+    alignItems:'start',
     flexDirection:'column',
     //border: isMobile ? '1px solid black' : '1px solid red',
   };
@@ -211,12 +213,18 @@ else
         <div className={styles.left_nav}>
               
       <Link to="/" state={{ theme: theme }}>
-      <div className={styles.logo_div}>
+      <div className={styles.logo_div} >
+       {(theme=='colour')?     
+       <svg width="236" height="332" viewBox="0 0 236 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 95C8 46.399 47.3989 7 96 7H112V236C112 284.601 72.6011 324 24 324H8V95Z" fill="#26D973"/>
+        <path d="M228 95C228 46.3989 188.601 7 140 7H124V135C124 146.046 132.954 155 144 155H228V95Z" fill="#268CD9"/>
+        </svg>:
         <svg xmlns="http://www.w3.org/2000/svg" width="236" height="332" viewBox="0 0 236 332" fill="none">
-  <path d="M8 95C8 46.399 47.3989 7 96 7H112V236C112 284.601 72.6011 324 24 324H8V95Z" fill="#484848"/>
-  <path d="M228 95C228 46.3989 188.601 7 140 7H124V135C124 146.046 132.954 155 144 155H228V95Z" fill="#ACAEAB"/>
-</svg> 
-</div>
+          <path d="M8 95C8 46.399 47.3989 7 96 7H112V236C112 284.601 72.6011 324 24 324H8V95Z" fill="#484848"/>
+          <path d="M228 95C228 46.3989 188.601 7 140 7H124V135C124 146.046 132.954 155 144 155H228V95Z" fill="#ACAEAB"/>
+          </svg>
+          }
+          </div>
 </Link>
 <div className={styles.sun_div} onClick={toggleTheme} >
 <img src={theme=='dark'?sunImage:moonImage} alt="Sun" />
@@ -226,15 +234,16 @@ else
 <div className={styles.colorwheel} onClick={toggleColourTheme}>
 <img src={colorImage} alt="Color" />
 </div>
+{ !isMobile &&
+<div onMouseEnter={() => setSocialText('Socials')}
+        onMouseLeave={() =>setSocialText('@')}><h3 className={styles.socials_text}>{SocialText}</h3></div>}
+
 { isMobile &&
 <div><h3 className={styles.socials_text}>@</h3></div>}
 
-{ !isMobile &&
-<div><h3 className={styles.socials_text}>Socials</h3></div>}
-
 </div>
       </div>
-       <div className={stylesectionproject.header} style={pageHeader}>
+       <div className={styleproject.header} style={pageHeader}>
         { !isMobile &&
 <img src={theme=='dark'?PenImage:PenImage} className={stylesectionproject.pen} alt="Sun" />}
   <h1>{projectItem?.title}</h1>
@@ -249,4 +258,4 @@ else
   );
 }
 
-export default ProjectPage
+export default projectPage

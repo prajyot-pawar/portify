@@ -9,6 +9,7 @@ import BlogPage from './pages/BlogPage/BlogPage';
 import BlogSectionPage from './pages/BlogSectionPage/BlogSectionPage';
 import ProjectSectionPage from './pages/ProjectSectionPage/ProjectSectionPage';
 import ProjectPage from './pages/ProjectPage/ProjectPage';
+import AboutPage from './pages/AboutPage/AboutPage';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
      <Route path="/blogs/blog" element={<BlogPage/>}/>
      <Route path="/projects" element={<ProjectSectionPage/>}/>
      <Route path="/projects/project" element={<ProjectPage/>}/>
+     <Route path="/about" element={<AboutPage/>}/>
      {/* <Route path="/loading" element={<LoadingScreen/>}/>
      <Route path="/consumer" element={<ViewStreamScreen/>}/>
      <Route path="/broadcast" element={<StreamScreen/>}/> */}

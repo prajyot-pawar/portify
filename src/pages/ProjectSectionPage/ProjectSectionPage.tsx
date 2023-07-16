@@ -1,10 +1,9 @@
 import { useState, useEffect, CSSProperties, useRef } from 'react';
 import styles from '../../assets/css/HomePage.module.css'
-import stylesproject from './ProjectSectionPage.module.css';
+import stylesprojectsection from './ProjectSectionPage.module.css';
 import sunImage from '../../assets/images/sun 1.png';
 import moonImage from '../../assets/svg/moon.svg';
 import colorImage from '../../assets/images/go_color.png';
-import PenImage from '../../assets/images/pen.png';
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 
@@ -115,10 +114,10 @@ else
   const projectdivStyle :CSSProperties = {    
     backgroundColor:(theme=== 'colour' && 'light' ) ? '#feffd6' : 'white',
     margin: isMobile?'20px':'30px',
-    height: '15vh',
+    minHeight: '15vh',
     width: isMobile?'70vw':'50vw',
     padding: '2vh',
-    fontSize: isMobile ? '38px' : '60px',
+    fontSize: isMobile ? '20px' : '40px',
   };
 
 
@@ -127,8 +126,11 @@ else
   const  pageHeader:CSSProperties = {
     width:'25vw',
     height:'15vh',
-    fontSize:isMobile ? '25px':'30px',
+    fontSize:isMobile ? '15px':'40px',
     display:'flex',
+    alignContent:'center',
+    justifyContent:'center',
+    textAlign:'center',
     flexDirection:'row',
     // backgroundColor:'red',
     //borderRadius: ,    
@@ -183,10 +185,16 @@ else
               
       <Link to="/" state={{ theme: theme }}>
       <div className={styles.logo_div}>
+      {(theme=='colour')?     
+       <svg width="236" height="332" viewBox="0 0 236 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 95C8 46.399 47.3989 7 96 7H112V236C112 284.601 72.6011 324 24 324H8V95Z" fill="#26D973"/>
+        <path d="M228 95C228 46.3989 188.601 7 140 7H124V135C124 146.046 132.954 155 144 155H228V95Z" fill="#268CD9"/>
+        </svg>:
         <svg xmlns="http://www.w3.org/2000/svg" width="236" height="332" viewBox="0 0 236 332" fill="none">
-  <path d="M8 95C8 46.399 47.3989 7 96 7H112V236C112 284.601 72.6011 324 24 324H8V95Z" fill="#484848"/>
-  <path d="M228 95C228 46.3989 188.601 7 140 7H124V135C124 146.046 132.954 155 144 155H228V95Z" fill="#ACAEAB"/>
-</svg> 
+          <path d="M8 95C8 46.399 47.3989 7 96 7H112V236C112 284.601 72.6011 324 24 324H8V95Z" fill="#484848"/>
+          <path d="M228 95C228 46.3989 188.601 7 140 7H124V135C124 146.046 132.954 155 144 155H228V95Z" fill="#ACAEAB"/>
+          </svg>
+          }
 </div>
 </Link>
 <div className={styles.sun_div} onClick={toggleTheme} >
@@ -205,20 +213,18 @@ else
 
 </div>
       </div>
-       <div className={stylesproject.header} style={pageHeader}>
-        { !isMobile &&
-<img src={theme=='dark'?PenImage:PenImage} className={stylesproject.pen} alt="Sun" />}
+       <div className={stylesprojectsection.header} style={pageHeader}>
   <h1>projects</h1>
 </div>   
-<div className={stylesproject.line}></div>
-       <div style= {pageContent} className={stylesproject.content}>
-      {projectItems.map((projectItem, index) => (
-      <Link to="/projects/project" state={{ theme: theme , item: projectItem}} className={stylesproject.link}>
-        <div key={index} className={stylesproject.projectdiv} style= {projectdivStyle}>
-           <div className={styles.project_div_header}>
+<div className={stylesprojectsection.line}></div>
+       <div style= {pageContent} className={stylesprojectsection.content}>
+      {projectItems.slice(0, projectItems.length - 1).map((projectItem, index) => (
+      <Link to="/projects/project" state={{ theme: theme , item: projectItem}} className={stylesprojectsection.link}>
+        <div key={index} className={stylesprojectsection.projectdiv} style= {projectdivStyle}>
+           <div className={stylesprojectsection.project_div_header}>
             <h3>{projectItem.title}</h3>  
             </div>
-          <div className={stylesproject.project_div_lower} style={projectdivlowerStyle}>
+          <div className={stylesprojectsection.project_div_lower} style={projectdivlowerStyle}>
             <div className={styles.project_div_date}>{projectItem.date} </div>
             <p>{projectItem.minutes}</p>
           </div>

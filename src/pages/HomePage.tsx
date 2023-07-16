@@ -18,6 +18,8 @@ const MyHomePage : React.FC = () => {
   // const [isDark, setIsDark] = useState(true);
   
   const mouseCircleRef = useRef<HTMLDivElement | null>(null);
+ 
+  const [SocialText, setSocailText] = useState('@');  
 
   useEffect(() => {
     const handleResize = () => {
@@ -146,7 +148,7 @@ else
     // console.log("what is this" + x + y);
   };
   
-  
+  {
   useEffect(() => {
     document.addEventListener("mousemove", update);
     document.addEventListener("touchmove", update);
@@ -156,7 +158,7 @@ else
       document.removeEventListener("touchmove", update);
     };
   }, []);
-
+}
 
   
 
@@ -190,12 +192,15 @@ else
 <div className={styles.colorwheel} onClick={toggleColourTheme}>
 <img src={colorImage} alt="Color" />
 </div>
+
+<Link to="/about" state={{ some: "value" }} className={styles.link}> 
 { isMobile &&
 <div><h3 className={styles.socials_text}>@</h3></div>}
 
 { !isMobile &&
-<div><h3 className={styles.socials_text}>Socials</h3></div>}
-
+<div onMouseEnter={() => setSocailText('Socials')}
+        onMouseLeave={() =>setSocailText('@')} className={SocialText=='@'?styles.zoomed:styles.unzoomed}><h3 className={styles.socials_text}>{SocialText}</h3></div>}
+</Link>
 </div>
       </div>
       <HeroSection/>
@@ -203,15 +208,14 @@ else
       <p className={styles.title_upper}>Myself</p>  
       <p className={styles.title}>Prajyot Pawar</p>  
       <p className={styles.subtitle}>Computer Engineering Student</p>
-      <p className={styles.subtitle_lower}>A multipotentialite</p>
+      <p className={styles.subtit le_lower}>A multipotentialite</p>
       </div> */}
       <div style={bottomnavbarstyle}>   
       <Link to="/blogs" state={{ theme: theme }} className={styles.link}> 
       <div style={blogsectionstyle} className={styles.blogSection}>
           <p className={(theme=='colour')?styles.blog_section_color:styles.blog_section}>Blogs</p>  
          </div>
-          </Link> 
-          
+          </Link>             
       <Link to="/projects" state={{ theme: theme }} className={styles.link}> 
         <div style={projectsectionstyle} className={styles.projectsSection}> 
           <p className={(theme=='colour')?styles.projects_section_color:styles.projects_section}>Projects</p> 

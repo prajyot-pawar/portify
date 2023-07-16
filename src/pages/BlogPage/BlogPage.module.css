@@ -1,34 +1,4 @@
-@font-face {
-     font-family: 'Monument Extended';
-     src: url('../fonts/MonumentExtended-Regular.otf') format('truetype');
-     /* Add additional font formats and paths for different file types */
-   }
-   
-   @font-face {
-     font-family: 'Monument Extended UB';
-     src: url('../fonts/MonumentExtended-Ultrabold.otf') format('truetype');
-     /* Add additional font formats and paths for different file types */
-   }
-   
-   
-   @font-face {
-     font-family: 'Alex Brush';
-     src: url('../fonts/AlexBrush-Regular.ttf') format('truetype');
-     /* Add additional font formats and paths for different file types */
-   }
-   
-   
-   @font-face {
-     font-family: 'Dualis';
-     src: url('../fonts/Dualis-Lite.ttf') format('truetype');
-     /* Add additional font formats and paths for different file types */
-   }
 
-   @font-face {
-     font-family: 'Open Sans';
-     src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap') format('truetype');
-     /* Add additional font formats and paths for different file types */
-   }
 
    .blogContent{
     display: flex;
@@ -40,10 +10,33 @@
     padding-left: 15vh;
     padding-right: 15vh;
     text-align: start;
-    font-family: 'Open Sans';
+    font-family: 'Montserrat';
+  text-overflow: ellipsis;
+  word-wrap: break-word;
 
    }
 
+   code {
+    font-family: 'Montserrat';
+    font-size: inherit;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+  }
+  
+  /* Code in text */
+  p > code,
+  li > code,
+  dd > code,
+  td > code {
+    display: block;
+    background: rgb(53, 53, 53);
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: fit-content;
+    color: beige;
+  }
    
 @media (max-width: 768px) {
 
@@ -58,7 +51,32 @@
     padding-left: 5vh;
     padding-right: 5vh;
     text-align: start;
-    font-family: 'Open Sans';
-
+    font-family: 'Montserrat';
    }
+
+   
+   code {
+    font-family: 'Montserrat';
+    font-size: inherit;
+  }
+
+  img{    
+  max-width: 100%;
+    width: 1000px;
+  }
+  
+  /* Code in text */
+  p > code,
+  li > code,
+  dd > code,
+  td > code {
+    display: block;
+    background: rgb(53, 53, 53);
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: fit-content;
+    color: beige;
+  }
   }

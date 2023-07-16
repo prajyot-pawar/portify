@@ -1,6 +1,4 @@
-import { useState, useEffect, CSSProperties, useRef } from 'react';
 import styles from '../assets/css/herosection.module.css';
-import coloursplash from '../assets/images/coloursplash.png';
 
 const HeroSection = () => {   
         return (
