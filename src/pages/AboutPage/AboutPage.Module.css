@@ -1,0 +1,753 @@
+/* all the css of about section have been 
+declared in HomePage.module.css since it was throwing unknown strikethrough error
+Hurtful Regrets for inconvinience of redirecting and confusion between styles. */
+
+
+@font-face {
+     font-family: 'Monument Extended';
+     src: url('../fonts/MonumentExtended-Regular.otf') format('truetype');
+     /* Add additional font formats and paths for different file types */
+   }
+   
+   @font-face {
+     font-family: 'Monument Extended UB';
+     src: url('../fonts/MonumentExtended-Ultrabold.otf') format('truetype');
+     /* Add additional font formats and paths for different file types */
+   }
+   
+   
+   @font-face {
+     font-family: 'Alex Brush';
+     src: url('../fonts/AlexBrush-Regular.ttf') format('truetype');
+     /* Add additional font formats and paths for different file types */
+   }
+   
+   
+   @font-face {
+     font-family: 'Dualis';
+     src: url('../fonts/Dualis-Lite.ttf') format('truetype');
+     /* Add additional font formats and paths for different file types */
+   }
+   
+   @font-face {
+     font-family: 'Source Code';
+     src: url('../fonts/SourceCode.ttf') format('truetype');
+     /* Add additional font formats and paths for different file types */
+   }
+   
+   @font-face {
+     font-family: 'Montserrat';
+     src: url('../fonts/Montserrat.ttf') format('truetype');
+     /* Add additional font formats and paths for different file types */
+   }
+   @font-face {
+     font-family: 'GreatVibesRegular';
+     src: url('../fonts/GreatVibesRegular.ttf') format('truetype');
+     /* Add additional font formats and paths for different file types */
+   }
+   @font-face {
+     font-family: 'CookiesandCheeze';
+     src: url('../fonts/CookiesandCheeze.ttf') format('truetype');
+     /* Add additional font formats and paths for different file types */
+   }
+   
+   *, *:before, *:after {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     -webkit-font-smoothing: antialiased;
+     appearance: none;
+   }
+   
+   .left_nav{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   
+   /* background-color: violet; */
+   }
+   
+   .right_nav{
+     width: 20vw;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-items: center;
+     justify-content: space-evenly;
+   }
+   
+   .None{  
+     cursor: none;
+        overflow:hidden;
+   }
+   
+   .None::before {
+     content: '';
+     display: block;
+     width: 100%;
+     height: 100%;
+     position: fixed;
+     pointer-events: none;
+   }
+   
+   .Dark{  
+     cursor: none;
+        overflow:hidden;
+   }
+   
+   .Dark::before {
+     content: '';
+     display: block;
+     width: 100%;
+     height: 100%;
+     position: fixed;
+     pointer-events: none;
+     
+     background: radial-gradient(
+       circle 20vmax at var(--cursorX) var(--cursorY),
+       rgba(0, 0, 50, 0.02) 0%,
+       rgba(0, 0, 0, 0.05) 10%,
+       rgba(0, 0, 0, 0.4) 50%,
+       rgba(0, 0, 0, 0.7) 80%,
+       rgba(0, 0, 0, 0.91) 100%
+       /* rgba(0, 0, 0, 0.95) 110% */
+     );
+   }
+   
+   
+   .Light{  
+     cursor: none; 
+        overflow:hidden;
+   }
+   
+   .Light::before {
+     content: "";
+     
+     display: block;
+     width: 80px;
+     height: 80px;
+     border-radius: 100%;
+     position: fixed;
+     top: calc(var(--cursorY) - 40px); 
+     left: calc(var(--cursorX) - 40px); 
+     mix-blend-mode: exclusion; /* Blend mode to invert color */
+     pointer-events: none;
+     background-color: rgb(255, 255, 255)
+     
+     /* circle 20vmax at var(--cursorX) var(--cursorY), */
+   }
+   
+   .ColorLight{  
+     cursor: none; 
+        overflow:hidden;
+   }
+   
+   .ColorLight::before {
+     content: "";
+     display: block;
+     width: 80px;
+     height: 80px;
+     border-radius: 100%;
+     position: fixed;
+     top: calc(var(--cursorY) - 40px); 
+     left: calc(var(--cursorX) - 40px); 
+     mix-blend-mode: exclusion; /* Blend mode to invert color */
+     pointer-events: none;
+     background-color: rgb(255, 255, 255)
+     
+     /* circle 20vmax at var(--cursorX) var(--cursorY), */
+     ;
+     border: 0px solid black;
+   }
+   
+   .ColorDark{  
+     cursor: none; 
+        overflow:hidden;
+   }
+   
+   .ColorDark::before {
+     content: "";
+     display: block;
+     width: 80px;
+     height: 80px;
+     border-radius: 100%;
+     position: fixed;
+     top: calc(var(--cursorY) - 40px); 
+     left: calc(var(--cursorX) - 40px); 
+     mix-blend-mode: exclusion; /* Blend mode to invert color */
+     pointer-events: none;
+     background-color: rgb(255, 255, 255)
+     
+     /* circle 20vmax at var(--cursorX) var(--cursorY), */
+     ;
+     border: 0px solid black;
+   }
+   
+   
+   /* #light {
+     position: absolute;
+     width: 500px;
+     height: 500px;
+     background-color: #fff;
+     z-index: 10;
+     -webkit-box-shadow: inset 0px 0px 150px 166px rgba(0,0,0,1);
+     -moz-box-shadow: inset 0px 0px 150px 166px rgba(0,0,0,1);
+     box-shadow: inset 0px 0px 150px 166px rgba(0,0,0,1);
+   
+   } */
+   
+   
+   .navbar {
+     width: 100vw;
+     height: 10vh;
+     align-content: space-between;
+     /* border-radius: 8px; */
+     display: flex;  
+     flex-direction: row;
+     align-items: start;
+     /* border: 1px solid red; */
+   }
+   
+   .navbar.mobile {
+     border: 10px solid black;
+     border-radius: 40px;
+   }
+   
+   .link {
+     text-decoration: none;
+     cursor: none;
+   }
+   
+   
+   .blogSection {
+     /* width: 50vw;
+     height: 30vh;
+     display: inline-block;
+     margin: auto;
+     position: relative; */
+     background-color: #484848;
+     /*box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.59);
+     margin-bottom: -8px;
+     margin-top: 12px; */
+     animation-duration: 1s;
+     animation-iteration-count: 1;
+     transform-origin: bottom;
+     animation-fill-mode: forwards;
+     
+     /* animation-name: bounce;
+     animation-timing-function: ease; */
+   }
+   .blogSection:hover {
+     animation-name: slideup;
+     border-radius:  0 20px 20px 0px;
+     animation-timing-function: ease-in-out;
+   }
+   .blogSection:hover::before {
+     content: '';
+     width: 40%;
+     height: 5vh;
+     border-radius:  50px 100px 0 0px;
+     background-color: rgb(223, 223, 223);
+     position: absolute;
+     top: -2em;
+     left: 0px;
+   }
+   
+   .blog_section {
+     font-size: 35px;
+     color: #FFFFFF;
+     margin-bottom: 0px;
+     font-family: 'Monument Extended';
+   }
+   
+   .blog_section_color {
+     font-size: 35px;
+     color: #324597;
+     margin-bottom: 0px;
+     font-family: 'Monument Extended';
+   }
+   .fa fa-send-o{
+    
+   }
+   
+   .projectsSection {  
+     /* width: 50vw;
+     height: 30vh; */
+     /* display: inline-block; */
+     /* margin: auto;
+     position: relative; */
+     /*box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.59);
+     margin-bottom: -8px;
+     margin-top: 12px; */
+     background-color: #D9D9D9;
+     /* border-radius:  0 0px 0px 0px; */
+     animation-duration: 1s;
+     animation-iteration-count: 1;
+     transform-origin: bottom;
+     animation-fill-mode: forwards;
+     /* z-index: 0; */
+     
+     /* animation-name: bounce;
+     animation-timing-function: ease; */
+   }
+   .projectsSection:hover {
+     animation-name: slideup;
+     border-radius:  0 20px 20px 0px;
+     animation-timing-function: ease-in-out;
+   }
+   .projectsSection:hover::before {
+     content: '';
+     width: 40%;
+     height: 5vh;
+     border-radius: 50px 100px 0 0px;
+     background-color: #484848;
+     position: absolute;
+     top: -2em;
+     left: 0px;
+   }
+   
+   .projects_section {
+     font-size: 35px;
+     color: #484848;
+     margin-bottom: 0px;
+     font-family: 'Monument Extended';
+   } 
+   
+   .projects_section_color {
+     font-size: 35px;
+     color: #eec962;
+     margin-bottom: 0px;
+     font-family: 'Monument Extended';
+   } 
+   
+   .socials_text{    
+     color: #ffffff;
+     background-color: #484848;
+     padding: 20px;
+     border-radius: 100%;
+     transition: 0s ,color .5s,background-color .5s;  
+     font-size: 20;
+   }
+   
+   .logo_div{
+     width: 7vh;
+     height: 7vh;
+     margin: 15px;
+     padding:0cm;
+   
+   }
+   
+   
+   /* CSS */
+   .logo_div svg {
+     width: 100%; /* or any custom size */
+     height: 100%; 
+     object-fit: fill;  
+     width: 7vh;
+     height: 7vh;
+     transition: width 0.4s, height 0.4s;
+   }
+   .logo_div svg:hover {
+     width: 8vh;
+     height: 8vh;  
+     /* filter: drop-shadow(0 0 1em #696969); */
+   }
+   
+   .sun_div {
+     height: 10vh;
+     width: 10vh;
+     display: flex;
+     padding-left: 3%;
+     justify-content: center;
+     align-items: center;
+     transition: width 0.3s, height 0.3s;
+   }
+   .sun_div img {
+     object-fit: fill;
+     width: 4vh;
+     height: 4vh;  
+     animation: mymove 10s infinite;
+   }
+   
+   .sun_div img:hover {
+     width: 5vh;
+     height: 5vh;
+   }
+   
+   .colorwheel_div {
+     height: 10vh;
+     width: 10vh;
+     display: flex;
+     padding-left: 3%;
+     justify-content: center;
+     align-items: center;
+     transition: width 0.3s, height 0.3s;
+   }
+   
+   .colorwheel img {
+     object-fit: fill;
+     width: 4vh;
+     height: 4vh;  
+     animation: mymove 10s infinite;
+   }
+   
+   .colorwheel img:hover {
+     width: 5vh;
+     height: 5vh;
+   }
+   
+   .aboutsection{
+   height: 90vh;
+   width: 100vw;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   }
+   
+   .aboutcard{
+     height: 30vh;
+     min-width: 500px;
+     max-width: 1000px;
+     /* background-color: #f75f5f; */
+     display: flex;
+     border-radius:  30px 30px 30px 30px ;
+     color: rgb(255, 255, 255);
+     font-family: 'Monument Extended';  
+     transition: 
+     background-color 1s ease-in-out, 
+     color 1s ease-in-out, 
+     border-radius 1s ease-in-out;
+     transform-style: preserve-3d;
+     
+   }
+   /* .aboutcard:hover {  
+     transform: scale(1.1);
+     animation: scaleup 1.5s forwards ease-in;
+     background-color: #1e9aff;
+     border-radius: 20px 20px  20px 20px;
+     animation-timing-function: ease-in-out;
+     color: rgb(255, 255, 255);
+     transform: rotateY(180deg);
+   } */
+   
+   .flipcontainer{
+     position: relative;
+     width: 100%;
+     height: 100%;
+     /* background-color: #324597; */
+     transition: transform 0.8s;
+     perspective: 1000px;
+   }
+   
+   .flipcontainerwithouthover{
+     position: relative;
+     width: 100%;
+     height: 100%;
+     /* background-color: #324597; */
+     transition: transform 0.8s;
+     perspective: 1000px;
+     border-radius: 100%;
+   }
+   .redStrip{
+     background-color: red;
+     position: absolute;
+     width: 10%;
+     height: 100%;
+     z-index: -1;
+     left: 80%;
+   }
+   
+   .flipcontainerinner {
+     position: relative;
+     width: 101%;
+     height: 101%;
+     background-color: #404040;
+     transition: transform 1.8s;
+     border-radius: 10px 10px 10px 10px;
+     transform-style: preserve-3d;
+   }
+   .flipcontainerinner:hover{
+     color: white;
+   }
+   
+   .flipcontainer:hover .flipcontainerinner {
+     transform: rotateX(180deg);
+     color: white;
+   }
+   
+   .flipcontainerfront, .flipcontainerback {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     align-items: space-between;
+     justify-content: space-between;
+     backface-visibility: hidden;
+   }
+   .flipcontainerfrontrow{
+     width: 100%;
+     display: flex;
+     margin-top: 10%;
+     flex-direction: row;
+     align-items: center;
+     align-items: space-around;
+     justify-content: space-evenly;
+     backface-visibility: hidden;
+   }
+   
+   .flipcontainerfrontrow>img{
+     width: 10vh;
+     height: 10vh;
+     border-radius: 100%;
+   }
+   
+   .flipcontainerfrontrowcolumn{
+   display: flex;
+   flex-direction: column;
+   }
+   
+   .flipcontainerfrontrowcolumn>span{
+     margin-top: 5%;
+     font-family: 'alex brush';
+     opacity: 0.8;
+     font-size: 30px;
+   }
+   .flipcontainerfrontrowcolumn>div{
+     margin-top: 5%;
+     font-family: 'Monument Extended';
+     opacity: 0.8;
+     font-size: 15px;
+   }
+   
+   .flipcontainerfrontcolumnrow{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   width: 50%;
+   justify-content: space-between;
+   margin-bottom: 30px;
+   }
+   
+   .flipcontainersign{
+     position: absolute;
+     width: 20%;
+     height: 20%;
+     left: 85%;
+     top: 70%;
+     background-color: transparent;
+     font-family: 'Alex Brush';
+     font-size: 20px;
+     font-weight: 200;
+     transform:rotate(-30deg);
+   }
+   
+   .flipcontainerback {
+     background-color: dodgerblue;
+     color: white;
+     transform: rotateY(180deg)scaleY(-1)scaleX(-1);
+     /* -webkit-transform: scale(1, 1); */
+     border-radius: 10px 10px 10px 10px;
+   }
+   
+   
+   /* .aboutcard:not(:hover){  
+     animation: scaleup 1.5s reverse ease-in;
+   } */
+   /* 
+   .hovercontainer{
+     width: 50px;
+     height: 50px;
+     margin: auto;
+     position: absolute;
+     background: #f6f6f6;
+     border-radius: 25px;
+     outline: 0;
+     cursor: pointer;
+     top: 40vh;
+     transition: all .3s ease;
+   } */
+   
+   
+   /* .hovercontainer{
+     &:hover{
+       background: rgba(#f6f6f6, .3);
+       & > .pop{
+         opacity: 1;
+         width: 200px;
+         height: 200px;
+       } 
+     }
+   } */
+   
+   .popeffect{
+       opacity: 0;
+       width: 0;
+       height: 0;
+       background: #ffffff;
+       /* border-radius: 100%; */
+       z-index: -1;
+       margin: auto;
+     transition: all .3s ease;
+     & > p {
+       font-size: 20px;
+     }
+   }
+   
+   @keyframes mymove {
+     100% {transform: rotate(360deg);}
+   }
+   
+   @keyframes slideup {
+     0%   { transform: translateY(0); }
+     100%  { transform: translateY(-50px); }
+   }
+   
+   @keyframes slidedown {
+     100%   { transform: translateY(50); }
+     0%  { transform: translateY(50px); }
+   }
+   
+   @keyframes scaleup {
+     0% {
+         transform: scale(1);
+     }
+     100% {
+         transform: scale(1.20);
+     }
+   }
+   
+   @media (max-width: 768px) {
+   
+     .title {
+       font-size: 30px;
+     }
+     
+   .socials_text{  
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   }
+   
+   .zoomed{
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100vw;
+     height: 100vh;
+     margin: 0;
+     z-index: 9999;
+     transform: scale(1.5);
+     animation: zoom-in 0.3s ease;
+   }
+   
+   .subtitle {
+     font-size: 15px;
+     color: #787878;
+   }
+   
+   .subtitle_lower{
+     font-size: 40px;
+     color: #787878;  
+     font-weight: 600;  
+     font-family: 'Alex Brush';   
+   }
+   
+   
+   
+   .blog_section {
+     font-size: 25px;
+     border-radius: 0%;
+     color: #FFFFFF;
+     margin-bottom: 0px;
+     font-family: 'Monument Extended';
+   }
+   
+   .blog_section_color {
+     font-size: 25px;
+     color: #324597;
+     margin-bottom: 0px;
+     font-family: 'Monument Extended';
+   }
+   
+   .projects_section {
+     font-size: 25px;
+     color: #484848;
+     margin-bottom: 0px;
+     font-family: 'Monument Extended';
+   }
+   
+   .projects_section_color {
+     font-size: 25px;
+     color: #eec962;
+     margin-bottom: 0px;
+     font-family: 'Monument Extended';
+   } 
+   
+   .logo_div svg {
+     width: 100%; /* or any custom size */
+     height: 100%; 
+     object-fit: fill;  
+     width: 6vh;
+     height: 6vh;
+     transition: width 0.4s, height 0.4s;
+   }
+   
+   .sun_div {
+     height: 5vh;
+     width: 5vh;
+     display: flex;
+     padding-left: 1px;
+     justify-content: center;
+     align-items: center;
+     transition: width 0.4s, height 0.4s;
+   }
+   
+   .blogSection{
+     background-color: #767676;
+      border-radius:  0 10px 10px 10px;;
+     animation-duration: 1s;
+     animation-iteration-count: 1;
+     transform-origin: bottom;
+     animation-fill-mode: forwards;
+   }
+   .projectsSection{
+     background-color: #d9d9d9;
+      border-radius:  0 10px 10px 10px;;
+     animation-duration: 1s;
+     animation-iteration-count: 1;
+     transform-origin: bottom;
+     animation-fill-mode: forwards;
+   }
+   
+   .right_nav{
+     width: 40vw;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-items: center;
+     justify-content: space-evenly;
+   }
+   
+   .aboutcard{
+     height: 30vh;
+     min-width: 50vh;
+     /* background-color: #f75f5f; */
+     display: flex;
+     padding: 10px;
+     border-radius:  30px 30px 30px 30px ;
+     color: rgb(255, 255, 255);
+     font-family: 'Monument Extended';  
+     transition: 
+     background-color 1s ease-in-out, 
+     color 1s ease-in-out, 
+     border-radius 1s ease-in-out;
+     transform-style: preserve-3d;
+     
+   }
+   
+   }
+   
+   
+   
+   
+   

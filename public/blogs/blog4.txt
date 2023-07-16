@@ -1,0 +1,8 @@
+```
+function myCode(){
+    var a = 5;
+}
+```
+
+`Code`
+>Blockquote
