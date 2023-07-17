@@ -22,9 +22,8 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  return (<>
-  I am react router
-  <script src='https://kit.fontawesome.com/a076d05399.js' ></script>
+  return (
+  <>
   <Router>
     <Routes>
      <Route path="/" element={isLoading?(
@@ -34,13 +33,6 @@ function App() {
      <Route path="/projects" element={<ProjectSectionPage/>}/>
      <Route path="/projects/project" element={<ProjectPage/>}/>
      <Route path="/about" element={<AboutPage/>}/>
-     {/* <Route path="/loading" element={<LoadingScreen/>}/>
-     <Route path="/consumer" element={<ViewStreamScreen/>}/>
-     <Route path="/broadcast" element={<StreamScreen/>}/> */}
-     {/* <Route path="/movies" element={<Movies/>}/>
-     <Route path="/users" element={<Users />}/>
-     <Route path="/add" element={<AddUsers />}/>
-     <Route path="/update" element={<UpdateUsers />}/> */}
      </Routes>
    </Router>   
   </>

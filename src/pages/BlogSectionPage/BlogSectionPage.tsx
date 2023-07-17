@@ -18,7 +18,7 @@ interface blogItem {
 }
 
 
-const blogSectionPage=  () => {
+const BlogSectionPage=  () => {
 
   const location = useLocation();
   const prevpagetheme = location.state && location.state.theme;
@@ -239,4 +239,4 @@ else
   );
 }
 
-export default blogSectionPage
+export default BlogSectionPage

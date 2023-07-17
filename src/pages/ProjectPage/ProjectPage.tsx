@@ -25,7 +25,7 @@ interface projectItem {
    }
 
 
-const projectPage: React.FC  =  () => {
+const ProjectPage: React.FC  =  () => {
 
   const location = useLocation();  
   const { newtheme, item } = (location.state || {}) as LocationState;
@@ -258,4 +258,4 @@ else
   );
 }
 
-export default projectPage
+export default ProjectPage

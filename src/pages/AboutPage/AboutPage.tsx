@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 
 
-const MyHomePage : React.FC = () => {  
+const AboutPage : React.FC = () => {  
 
   const location = useLocation();
   const prevpagetheme = location.state && location.state.theme;
@@ -241,4 +241,4 @@ else
   );
 };
 
-export default MyHomePage;
+export default AboutPage;
