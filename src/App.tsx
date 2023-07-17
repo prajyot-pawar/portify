@@ -22,8 +22,8 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  return (<>
-  I am app.tsx
+  return (
+  <>
   <Router>
     <Routes>
      <Route path="/" element={isLoading?(

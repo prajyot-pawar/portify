@@ -5,7 +5,8 @@
   "homepage": "https://prajyotpawar.me/",
   "type": "module",
   "scripts": {
-    "dev": "vite","predeploy": "npm run build",
+    "dev": "vite",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d dist",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
