@@ -22,8 +22,8 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  return (
-  <>
+  return (<>
+  <script src='https://kit.fontawesome.com/a076d05399.js' ></script>
   <Router>
     <Routes>
      <Route path="/" element={isLoading?(
