@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   return (<>
-  <script src='https://kit.fontawesome.com/a076d05399.js' ></script>
+  I am app.tsx
   <Router>
     <Routes>
      <Route path="/" element={isLoading?(
