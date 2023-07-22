@@ -179,7 +179,7 @@ else
   return (
     <div className={divStyles}  ref={mouseCircleRef}>
       {/* <div className='light'></div> */}
-    <div style={pageStyle}>      
+    <div style={pageStyle}>      I am page
     {/* <div id='light'></div> */}
       <div style={navbarstyle}>
         <div className={styles.left_nav}>
