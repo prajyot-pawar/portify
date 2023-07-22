@@ -126,7 +126,7 @@ align-items: center;
   position: fixed;
   top: calc(var(--cursorY) - 40px); 
   left: calc(var(--cursorX) - 40px); 
-  mix-blend-mode: difference; /* Blend mode to invert color */
+  mix-blend-mode: exclusion; /* Blend mode to invert color */
   pointer-events: none;
   background-color: rgb(255, 255, 255)
   

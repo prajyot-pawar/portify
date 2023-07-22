@@ -140,7 +140,7 @@ else
    const update = (e: MouseEvent | TouchEvent) => {
     const x = (e as MouseEvent).clientX || (e as TouchEvent).touches[0].clientX;
     const y = (e as MouseEvent).clientY || (e as TouchEvent).touches[0].clientY;
-    const delay= isMobile? 100:150;
+    const delay= isMobile? 50:150;
     setTimeout(() => {      
       document.documentElement.style.setProperty("--cursorX", x + "px");
       document.documentElement.style.setProperty("--cursorY", y + "px");
