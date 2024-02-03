@@ -212,7 +212,7 @@ else
       <div style={navbarstyle}>
         <div className={styles.left_nav}>
               
-      <Link to="/" state={{ theme: theme }}>
+      <Link to="/portify/" state={{ theme: theme }}>
       <div className={styles.logo_div} >
        {(theme=='colour')?     
        <svg width="236" height="332" viewBox="0 0 236 332" fill="none" xmlns="http://www.w3.org/2000/svg">

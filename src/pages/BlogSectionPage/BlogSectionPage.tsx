@@ -184,7 +184,7 @@ else
       <div style={navbarstyle}>
         <div className={styles.left_nav}>
               
-      <Link to="/" state={{ theme: theme }}>
+      <Link to="/portify/" state={{ theme: theme }}>
       <div className={styles.logo_div}>
       {(theme=='colour')?     
        <svg width="236" height="332" viewBox="0 0 236 332" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -222,7 +222,7 @@ else
 <div className={stylesblogsection.line}></div>
        <div style= {pageContent} className={stylesblogsection.content}>
       {blogItems.slice(0, blogItems.length - 1).map((blogItem, index) => (
-      <Link to="/blogs/blog" state={{ theme: theme , item: blogItem}} className={stylesblogsection.link}>
+      <Link to="/portify/blogs/blog" state={{ theme: theme , item: blogItem}} className={stylesblogsection.link}>
         <div key={index} className={stylesblogsection.blogdiv} style= {blogdivStyle}>
            <div className={stylesblogsection.blog_div_header}>
             <h3>{blogItem.title}</h3>  

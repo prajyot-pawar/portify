@@ -157,7 +157,7 @@ else
     {/* <div id='light'></div> */}
       <div style={navbarstyle}>
         <div className={styles.left_nav}>          
-      <Link to="/" state={{ some: "value" }} className={styles.link}> 
+      <Link to="/portify/" state={{ some: "value" }} className={styles.link}> 
       <div className={styles.logo_div} >
        {(theme=='colour')?     
        <svg width="236" height="332" viewBox="0 0 236 332" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -180,7 +180,7 @@ else
 <img src={colorImage} alt="Color" />
 </div>
 
-<Link to="/" state={{ theme: theme }}>
+<Link to="/portify/" state={{ theme: theme }}>
 { isMobile &&
 <div><h3 className={styles.socials_text}>@</h3></div>}
 

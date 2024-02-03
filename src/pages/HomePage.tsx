@@ -170,7 +170,7 @@ else
     {/* <div id='light'></div> */}
       <div style={navbarstyle}>
         <div className={styles.left_nav}>          
-      <Link to="/" state={{ some: "value" }} className={styles.link}> 
+      <Link to="/portify/" state={{ some: "value" }} className={styles.link}> 
       <div className={styles.logo_div} >
        {(theme=='colour')?     
        <svg width="236" height="332" viewBox="0 0 236 332" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -193,7 +193,7 @@ else
 <img src={colorImage} alt="Color" />
 </div>
 
-<Link to="/about" state={{ some: "value" }} className={styles.link}> 
+<Link to="/portify/about" state={{ some: "value" }} className={styles.link}> 
 { isMobile &&
 <div><h3 className={styles.socials_text}>@</h3></div>}
 
@@ -211,12 +211,12 @@ else
       <p className={styles.subtit le_lower}>A multipotentialite</p>
       </div> */}
       <div style={bottomnavbarstyle}>   
-      <Link to="/blogs" state={{ theme: theme }} className={styles.link}> 
+      <Link to="/portify/blogs" state={{ theme: theme }} className={styles.link}> 
       <div style={blogsectionstyle} className={styles.blogSection}>
           <p className={(theme=='colour')?styles.blog_section_color:styles.blog_section}>Blogs</p>  
          </div>
           </Link>             
-      <Link to="/projects" state={{ theme: theme }} className={styles.link}> 
+      <Link to="/portify/projects" state={{ theme: theme }} className={styles.link}> 
         <div style={projectsectionstyle} className={styles.projectsSection}> 
           <p className={(theme=='colour')?styles.projects_section_color:styles.projects_section}>Projects</p> 
           </div>
