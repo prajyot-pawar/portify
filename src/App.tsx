@@ -26,13 +26,13 @@ function App() {
   <>
   <Router>
     <Routes>
-     <Route path="/" element={isLoading?(
+     <Route path="/portify/" element={isLoading?(
       <LoadingScreen/>):(<MyHomePage/>)}/>
-     <Route path="/blogs" element={<BlogSectionPage/>}/>
-     <Route path="/blogs/blog" element={<BlogPage/>}/>
-     <Route path="/projects" element={<ProjectSectionPage/>}/>
-     <Route path="/projects/project" element={<ProjectPage/>}/>
-     <Route path="/about" element={<AboutPage/>}/>
+     <Route path="/portify/blogs" element={<BlogSectionPage/>}/>
+     <Route path="/portify/blogs/blog" element={<BlogPage/>}/>
+     <Route path="/portify/projects" element={<ProjectSectionPage/>}/>
+     <Route path="/portify/projects/project" element={<ProjectPage/>}/>
+     <Route path="/portify/about" element={<AboutPage/>}/>
      </Routes>
    </Router>   
   </>
